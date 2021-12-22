@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+     <head>
+         <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="css/style.css">
+          <title> Controle Financeiro</title>
+     </head>
+     <body> 
+
+        <header class="topo"> <!--Início do topo da página - logo && menu.-->
+                <div class="logo">
+                    <div class="topo-imagem">
+                        <img src="img/logo.svg">
+                    </div>
+                    <div  class="topo-texto">
+                        Controle financeiro
+                    </div>
+                </div>
+                <div class="topo-menu">
+                    <div class="topo-menu-limparDados">
+                        <a href="#">Limpar Dados</a>                    
+                    </div>
+
+                    <hr> <!--Linha divisória entre os links da menu.-->
+
+                    <div class="topo-menu-cadastroTransacoes">
+                        <a href="#">Cadastro de Transações</a>
+                    </div>
+                </div>
+                <!--Início do menu hamburguer para responsividade-->
+                 <div class="topo-menu-hamburguer">
+                    <span class="button-menu">
+                        <img src="img/mobile-menu.svg">
+                    </span>
+                    <div class="conteudo-menu-hamburguer">
+                        <div class="close">
+                            <img src="img/mais.png">
+                        </div>
+                        <ul>
+                            <li><a href="#">Limpar Dados</a></li>
+                            <li><a href="#">Cadastro de Transações</a></li>
+                        </ul>
+                    </div>    
+                </div> <!--Final do menu hamburguer para responsividade--> 
+            
+        </header> <!--Final do topo da página - logo && menu.-->
+
+            <div class="body-site"> <!--Início corpo do site - Formulário && Extrato de transações-->
+
+                <form class="formulario"> <!--Início do formulário Nova Transação.-->
+
+                     <div class="formulario-titulo">
+                            Nova transação
+                        </div>
+
+                    <div class="div-form-elementos">
+                    
+                        <div class="div-form-select">   
+                            <div class="formulario-label-transacoes">Tipo de transação</div>
+                                <select class="formulario-select">
+                                    <option>Compra</option>
+                                    <option>Depósito</option>
+                                    <option>Pix</option>
+                                    <option>Transferência</option>
+                                </select>
+                        </div>
+
+                        <div class="div-form-mercadoria">
+                            <div class="formulario-label-mercadoria">Nome da mercadoria</div>
+                            <input class="formulario-input-text" type="text" placeholder="Mercadoria">
+                        </div>
+
+                         <div class="div-form-valor">
+                            <div class="formulario-label-valor">Valor</div>
+                            <input class="formulario-input-number" type="number" placeholder="R$ 0,00">
+                        </div>
+                    </div>    
+
+                    <input class="formulario-input-botao" type="button" value="Adicionar transação" onclick="enviar()">
+
+                </form> <!--Final do formulário Nova Transação.-->
+
+                <section class="extrato-transacoes"> <!--Início da Sessão Extrato de transações.-->
+
+                    <div class="extrato-transacoes-titulo">
+                        Extrato de transações
+                    </div>
+
+                    <table cellspacing="0" class="corpo-transacoes-tabela">
+                        
+                        <thead class="tabela-cabecalho">
+                            <tr>
+                                <th class="tabela-mercadoria-vazio"></th>
+                                <th class="tabela-mercadoria">Mercadoria</th>
+                                <th class="tabela-valor">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabela-corpo">
+                            <tr>
+                                <td class="tabelaMais-corpo">+</td>
+                                <td class="tabela-mercadoria">Lorem ipsum dolor sit amet consecteur</td>
+                                <td class="tabela-valorMercadoria">R$ 12.999,99</td>
+                            </tr>
+                            <tr>
+                                <td class="tabelaMenos">-</td>
+                                <td class="tabela-mercadoria">Quis nostrud exercitation</td>
+                                <td class="tabela-valorMercadoria">R$ 99,99</td>
+                            </tr>
+                            <tr>
+                                <td class="tabelaMais">+</td>
+                                <td class="tabela-mercadoria">Lorem ipsum</td>
+                                <td class="tabela-valorMercadoria">R$ 9,99</td>
+                            </tr>
+                         </tbody>
+                    </table> 
+                    <table class="tabela-rodape">    
+                        <tfoot>
+                            <tr>
+                                <td class="tabela-total-vazio"></td>
+                                <td class="tabela-total">Total</td>
+                                <td class="tabela-valorTotal">R$ 12.909,99 <br><span class="lucro">[LUCRO]</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>                                                                              
+                </section>  <!--Final da Sessão Extrato de transações.-->
+
+            </div>  <!--Final corpo do site - Formulário && Extrato de transações-->    
+
+        <script src="javaScript/javaScript.js"></script>
+    </body>
+</html>

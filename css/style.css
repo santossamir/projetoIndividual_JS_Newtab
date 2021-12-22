@@ -1,0 +1,550 @@
+@font-face {
+	font-family: Lato;
+	src: url('../font_Lato/Lato-Regular.ttf');
+}
+
+body {
+	font-family: Lato;
+	margin: 0;
+	max-width: 1500px;
+	max-height: 1000px;
+}
+
+/*Início estilização do topo da página - imagem - logo - menu.*/
+
+.topo {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 80px;
+	background: #E0E0E0;
+}
+
+.logo{
+	display: flex;
+	margin-left: 14.8%;
+}
+
+.topo-imagem {
+	padding: 20px 20px 20px 0;
+	width: 40px;
+}
+
+.topo-texto {
+    display: flex; 
+    align-items: center;
+    width: 411px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+}
+
+
+.topo-menu {
+	display: flex;
+	width: 320px;
+	height: 40px;
+    margin-top: 20px;
+    margin-right: 200px;
+    padding: 4px 20px 4px 20px;
+    align-items: center;
+    background: #FFFFFF;
+
+}
+
+hr{
+	width: 20px;
+	height: 0px;
+	left: 130px;
+	top: 10px;
+	border: 1px solid #979797;
+	transform: rotate(90deg);
+}
+
+.topo-menu-limparDados a, .topo-menu-cadastroTransacoes a {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.topo-menu-hamburguer {
+	display: none;
+}
+
+/*Final estilização do topo da página - imagem - logo - menu.*/
+
+/*Início estilização do formulário - Nova transação.*/
+.body-site {
+	display: flex;
+	margin-right: 200px;
+}
+
+.formulario {
+	margin-left: 200px;
+	margin-top: 30px;
+	padding: 0px 15px 0px 15px;
+    width: 400px;
+    height: 344px;
+    border: 1px solid #979797;
+    border-radius: 4px;
+}
+
+.formulario-titulo {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 22px;
+	margin-top: 20px;
+}
+
+.formulario-label-transacoes {
+	margin-top: 21px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #333333;
+}
+
+.formulario-select {
+	height: 32px;
+	left: 15px;
+	width:100%; 
+	top: 90px;
+	margin-top: 2.5px;
+	background: #FFFFFF;
+	border: 1px solid #979797;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: #888888;
+	padding-left: 10px;
+	outline: 0;
+}
+
+.formulario-label-mercadoria {
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #333333;
+}
+
+.formulario-input-text {
+	width: 100%;
+    height: 32px;
+    top: 160px;
+    margin-top: 2.5px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 12px;
+    outline: 0;
+}
+
+.formulario-label-valor {
+	margin-top: 21px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #333333;
+}
+
+.formulario-input-number {
+	width:100%; 
+	height: 32px;
+	margin-top: 2.5px;
+	background: #FFFFFF;
+	border: 1px solid #979797;
+	box-sizing: border-box;
+	border-radius: 4px;
+	padding-left: 12px;
+	outline: 0;
+}
+
+.formulario-input-botao {
+	width: 100%;
+	height: 32px;
+	margin-top: 21px;
+    color: #FFFFFF;
+    background: #333333;
+    border-color: #333333;
+    border-style: double;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+}
+/*Final estilização do formulário - Nova transação.*/
+
+/*Início estilização da sessão - Extrato de transações.*/
+.extrato-transacoes {
+	width: 665px;
+	margin-top: 30px;
+	font-size: 14px;
+	background: #FFFFFF;
+	margin-left: 22px;
+}
+
+.extrato-transacoes-titulo {
+    margin-top: 21px;
+    text-align: center;
+	letter-spacing: 1px;
+	line-height: 22px;
+	font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+     
+}
+
+.corpo-transacoes-tabela {
+	width: 100%;
+	margin-top: 19px;
+}
+
+.tabela-mercadoria {
+	text-align-last: start;
+	 width: 231px;
+}
+
+.tabela-valor, .tabela-valorMercadoria, .tabela-valorTotal{
+ 	padding-right: 25px;
+ 	padding-top: 10px;
+ }
+
+.tabela-mercadoria, .tabela-mercadoria-vazio,.tabela-valorMercadoria, .tabela-valor, .tabelaMais-corpo, .tabelaMais, .tabelaMenos {
+	border-bottom: 1px solid #b1b1b1;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.tabelaMais, .tabelaMenos, .tabelaMais-corpo {
+   padding-left: 25px;
+   width: 8%;
+}
+
+.tabela-rodape{
+	width: 100%;
+	margin-top: 2px;
+	border-spacing: 0;
+   font-weight: bold;
+   border-top: 1px solid #b1b1b1;
+}
+
+.tabela-total {
+	padding-left: 45px;
+}
+
+.tabela-valor, .tabela-valorMercadoria, .tabela-valorTotal{
+	text-align-last: right;
+}
+
+.lucro {
+	color: #404040;
+	font-size: x-small;
+}
+/* Final estilização da sessão Extrato de transações.*/
+
+
+/* **INÍCIO RESPONSIVIDADE.** */
+
+/*Início responsividade para Tablet*/
+@media only screen and (max-width: 1112px){
+
+	.logo{
+		margin-left: 20px;
+	}
+
+	.topo-menu {
+		margin-right: 20px;
+	}
+
+	.body-site {
+		margin-right: 20px;
+	}
+	.formulario {
+		margin-left: 20px;
+	}
+	
+}
+ /*Final responsividade para Tablet*/
+
+/*Início responsividade tablet portatil*/
+@media only screen  and (max-width: 768px) and (min-width: 412px){
+    
+    .topo {
+    	width: 768px;
+        height: 60px;
+    }
+    
+    .topo-imagem {
+		width: 30px;
+        height: 27px;
+        padding: 15px 20px 0 0; 
+	}
+
+	.topo-texto { 
+	    width: 197px;
+   		margin-left: 225px;
+    	letter-spacing: 1px;
+	} 
+
+	.topo-menu { 
+		display: none;
+	}
+     
+     /* -- -- -- Início menu hamburguer -- -- -- */
+	.topo-menu-hamburguer {
+		display: block;
+		margin-right: 20px;
+	}
+
+	.close {
+		position: absolute;
+    	width: 16px;
+    	height: 16px;
+    	left: 20px;
+     	top: 20px;
+     	transform: rotate(45deg);
+	}
+
+	.conteudo-menu-hamburguer ul {
+	    margin-top: 50px;
+	    list-style: none;
+	    padding: 0;
+	}
+
+	.conteudo-menu-hamburguer ul li a {
+	    display: block;
+    	padding: 20px 20px 20px 0px;
+    	text-align: right;
+	}
+
+	.conteudo-menu-hamburguer a {
+	    text-decoration: none;
+	    font-weight: 600;
+	    font-size: 16px;
+	    line-height: 19px;
+	    color: #FFFFFF;
+	}
+
+	.conteudo-menu-hamburguer ul li a:hover {
+	    color: #333333;
+	    background: #C4C4C4;
+	}
+
+	.conteudo-menu-hamburguer {
+		position: fixed;
+		background-color: #666;
+		color: white;
+		top: 0px;
+		right: -252px;
+		flex-direction: column;
+		height: 100%;
+		width: 252px;
+		transition: all 1.5s ease;
+		z-index: 1;
+	}
+		
+	.button-menu{
+		display: block;
+        margin-top: 16px;
+    }
+    
+    .topo-menu-hamburguer:hover .conteudo-menu-hamburguer {
+		right: 0;
+	}
+
+	.close:hover .conteudo-menu-hamburguer {
+		right: -252px;
+	}
+
+	/* -- -- -- Final menu hamburguer -- -- -- */
+	
+	.body-site {
+		display: block;
+		padding: 20px 20px 0px 20px;
+        width: 729px;
+	}
+	
+	.formulario {
+	    width: 728px;
+        height: 189px;
+        margin: 0;
+        padding: 0;
+        top: 104px;
+	}
+    
+    .formulario-titulo {
+		left: 276px;
+        top: 20px;
+    }
+
+    .div-form-elementos {
+    	display: flex;
+    }
+
+    .div-form-select, .div-form-mercadoria, .div-form-valor {
+    	margin-left: 20px;
+    }
+
+    .formulario-select {
+    	width: 150px;
+	}
+
+	.formulario-input-text {
+		width: 348px;
+	}
+
+	.formulario-input-number {
+		width: 150px;
+	}
+
+	.formulario-input-botao {
+	    margin-top: 20px;
+	    width: 200px;
+	    height: 32px;
+	    margin-right: 20px;
+	    float: right;
+	}
+        
+	.extrato-transacoes {
+	    width: 728px;
+        margin-left: 0;
+	}
+
+	.extrato-transacoes-titulo {
+		left: 277px;
+	}
+    
+ }/*Final responsividade tablet portatil*/
+
+ 
+ /*Inicio responsividade smarthphone.*/
+@media only screen and (max-width: 411px) {
+	.topo {
+    	width: 411px;
+        height: 60px;
+    }
+    
+    .topo-imagem {
+		width: 30px;
+        height: 27px;
+        padding: 15px 20px 0 0; 
+	}
+
+	.topo-texto { 
+	    width: 197px;
+	    margin-left: 45px;
+	    letter-spacing: 1px; 
+	} 
+
+	.topo-menu { 
+		display: none;
+	}
+    /* -- -- -- Início menu hamburguer -- -- -- */
+	.topo-menu-hamburguer {
+		display: block;
+		margin-right: 20px;
+	}
+
+	.close {
+		position: absolute;
+    	width: 16px;
+    	height: 16px;
+    	left: 20px;
+     	top: 20px;
+     	transform: rotate(45deg);
+	}
+
+	.conteudo-menu-hamburguer ul {
+	    margin-top: 50px;
+	    list-style: none;
+	    padding: 0;
+	}
+
+	.conteudo-menu-hamburguer ul li a {
+	    display: block;
+    	padding: 20px 20px 20px 0px;
+    	text-align: right;
+	}
+
+	.conteudo-menu-hamburguer a {
+	    text-decoration: none;
+	    font-weight: 600;
+	    font-size: 16px;
+	    line-height: 19px;
+	    color: #FFFFFF;
+	}
+
+	.conteudo-menu-hamburguer ul li a:hover {
+	    color: #333333;
+	    background: #C4C4C4;
+	}
+
+	.conteudo-menu-hamburguer {
+		position: fixed;
+		background-color: #666;
+		color: white;
+		top: 0px;
+		right: -338px;
+		flex-direction: column;
+		height: 100%;
+		width: 338px;
+		transition: all 1.5s ease;
+		z-index: 1;
+	}
+		
+	.button-menu{
+		display: block;
+        margin-top: 16px;
+    }
+    
+    .topo-menu-hamburguer:hover .conteudo-menu-hamburguer {
+		right: 0;
+	}
+
+
+	/* -- -- -- Final menu hamburguer -- -- -- */
+	
+	.body-site {
+	    display: block;
+        width: 411px;
+    	margin-top: 26px;
+	}
+    
+    .formulario-titulo {
+    	display: none;
+    }
+
+    .formulario {
+    	margin-left: 20px;
+	}
+
+	.formulario { 
+	    width: 371px;
+	    height: 300px;
+	    padding: 0;
+	    border: none;
+	    border-bottom: 1px solid #979797;
+	}
+
+	.extrato-transacoes {
+		width: 371px;
+    	margin-top: 20px;
+    	font-size: 14px;
+       	margin-left: 20px
+	   	height: 281px;
+	}
+
+	.tabelaMais, .tabelaMenos, .tabelaMais-corpo {
+		padding-left: 10px;
+	}
+
+	.tabela-valorMercadoria {
+		width: 85px;
+	}
+
+}
+/*Final responsividade smarthphone.*/  
+
+
+/* **FINAL RESPONSIVIDADE.** */
