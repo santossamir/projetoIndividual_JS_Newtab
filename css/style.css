@@ -349,14 +349,7 @@ hr{
         margin-top: 16px;
     }
     
-    .topo-menu-hamburguer:hover .conteudo-menu-hamburguer {
-		right: 0;
-	}
-
-	.close:hover .conteudo-menu-hamburguer {
-		right: -252px;
-	}
-
+    
 	/* -- -- -- Final menu hamburguer -- -- -- */
 	
 	.body-site {
@@ -498,11 +491,6 @@ hr{
         margin-top: 16px;
     }
     
-    .topo-menu-hamburguer:hover .conteudo-menu-hamburguer {
-		right: 0;
-	}
-
-
 	/* -- -- -- Final menu hamburguer -- -- -- */
 	
 	.body-site {
