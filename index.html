@@ -48,7 +48,7 @@
 
             <div class="body-site"> <!--Início corpo do site - Formulário && Extrato de transações-->
 
-                <form class="formulario" onsubmit="submitForm(event)"> <!--Início do formulário Nova Transação.-->
+                <form class="formulario"> <!--Início do formulário Nova Transação.-->
 
                      <div class="formulario-titulo">
                             Nova transação
@@ -59,8 +59,8 @@
                         <div class="div-form-select">   
                             <div class="formulario-label-transacoes">Tipo de transação</div>
                                 <select class="formulario-select" name="compra&venda">
-                                    <option>Compra</option>
-                                    <option>Venda</option>
+                                    <option value="compra">Compra</option>
+                                    <option value="venda">Venda</option>
                                 </select>
                         </div>
 
@@ -75,7 +75,7 @@
                         </div>
                     </div>    
 
-                    <input class="formulario-input-botao" type="button" value="Adicionar transação" >
+                    <input class="formulario-input-botao" type="button" value="Adicionar transação" onclick="submitingForm(event)">
 
                 </form> <!--Final do formulário Nova Transação.-->
 
@@ -95,30 +95,16 @@
                             </tr>
                         </thead>
                         <tbody class="tabela-corpo">
-                            <!--<tr>
-                                <td class="tabelaMais-corpo">+</td>
-                                <td class="tabela-mercadoria"></td>
-                                <td class="tabela-valorMercadoria"></td>
-                            </tr>
-                            <tr>
-                                <td class="tabelaMenos">-</td>
-                                <td class="tabela-mercadoria"></td>
-                                <td class="tabela-valorMercadoria"></td>
-                            </tr>
-                            <tr>
-                                <td class="tabelaMais">+</td>
-                                <td class="tabela-mercadoria"></td>
-                                <td class="tabela-valorMercadoria"></td>
-                            </tr>-->
+                           
                          </tbody>
                     </table> 
                     <table class="tabela-rodape">    
-                        <tfoot>
-                            <tr>
+                        <tfoot id="tabela-foot">
+                            <!--<tr>
                                 <td class="tabela-total-vazio"></td>
-                                <td class="tabela-total">Total</td>
-                                <td class="tabela-valorTotal"> <br><span class="lucro"></span></td>
-                            </tr>
+                                <td class="tabela-total"></td>
+                                <td class="tabela-valorTotal"> <br><span class="lucro"></span></td> 
+                            </tr>-->
                         </tfoot>
                     </table>                                                                              
                 </section>  <!--Final da Sessão Extrato de transações.-->
