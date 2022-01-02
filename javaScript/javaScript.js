@@ -4,17 +4,18 @@ const writingFormatter = new Intl.NumberFormat('pt-BR', {
 	minimumFractionDigits: 2,
 });
 
-var transactions = localStorage.getItem("transactions") ? JSON.parse(localStorage.getItem("transactions")) : [];
+var transacoes = localStorage.getItem("transacoes") ? JSON.parse(localStorage.getItem("transacoes")) : [];
 
 //Início da função toClean - Limpar Dados. ---------------------------
-/*function toClean(){
-	let userConfirm = confirm("Deseja remover todas as transações?");
-	if(userConfirm){
-		localStorage.removeItem("transactions");
-		transactions = [];
-		AddingTransactions();
-	}
-}*/
+function toClean(){
+	let removeConfirm = confirm("Deseja remover as transações?");
+	
+		if(removeConfirm){
+			localStorage.removeItem("transacoes");
+			transacoes = []; 
+			addingTransactions();
+		}
+}
 //Final da função toClean - Limpar Dados. ----------------------------
 
 // Início da função focar no formulário - Cadastro de Transações.----------------------
@@ -50,74 +51,75 @@ function currencyFormat(moeda){
 // Final da escrita padrão do valor moeda. --------------------------------------
 
 // Início da Extrato de transações. ---------------------------------------------
-async function AddingTransactions(){
+function addingTransactions(){
+
+	limparDados = [...document.querySelectorAll('.tr-remove')];
+	limparDados.forEach((element) => {element.remove()});
+
 	let total = 0;
 
-	for(item in transactions){
+	for(item in transacoes){
 
-		if(transactions[item].transType == "compra"){
-			total -= transactions[item].transCurrency;
+		if(transacoes[item].tipoTrans == "compra"){
+			total -= transacoes[item].tipoMoeda;
 		}else{
-			total += transactions[item].transCurrency;
+			total += transacoes[item].tipoMoeda;
 		}
 
 		document.querySelector(".tabela-corpo").innerHTML += 
-		`<tr>
-            <td class="tabelaMais-corpo">${transactions[item].transType == "compra" ? "-" : "+"}</td>
-            <td class="tabela-mercadoria">${transactions[item].transName}</td>
-            <td class="tabela-valorMercadoria">${writingFormatter.format(transactions[item].transCurrency.toString().replace(/([0-9]{2})$/g, ".$1"))}</td>
+		`<tr class="tr-remove">
+            <td class="tabelaMais-corpo">${transacoes[item].tipoTrans == "compra" ? "-" : "+"}</td>
+            <td class="tabela-mercadoria">${transacoes[item].nomeMerc}</td>
+            <td class="tabela-valorMercadoria">${writingFormatter.format(transacoes[item].tipoMoeda.toString().replace(/([0-9]{2})$/g, ".$1"))}</td>
         </tr>`
 	}
 
-	if(transactions.length > 0){
-		document.querySelector("#tabela-foot").innerHTML += 
-		`<tr>
-            <td class="tabela-total-vazio"></td>
-            <td class="tabela-total">Total</td>
-            <td class="tabela-valorTotal"> ${writingFormatter.format(total.toString().replace(/([0-9]{2})$/g, ".$1"))} <br> <span class="lucro">[${Math.sign(total) == 1 ? "LUCRO" : "PREJUÍZO"}]</span></td>
-        </tr>
-        `
-	}
+		if(transacoes.length > 0){
+			document.querySelector("#tabela-foot").innerHTML += 
+			`<tr class="tr-remove">
+	            <td class="tabela-total-vazio"></td>
+	            <td class="tabela-total">Total</td>
+	            <td class="tabela-valorTotal">${writingFormatter.format(total.toString().replace(/([0-9]{2})$/g, ".$1"))} <br> <span class="lucro">[${Math.sign(total) == 1 ? "LUCRO" : "PREJUÍZO"}]</span></td>
+	        </tr>
+	        `
+		}
 }
-
 //Final da Extrato de transações. -----------------------------------------------
 
 // Início do formulário Nova Transação. -----------------------------------------
 function submitingForm(e){
 	e.preventDefault();
 
-	transactionType = document.querySelector('select[name="compra&venda"]');
-	transactionName = document.querySelector('input[name="nomeMercadoria"]');
-	transactionCurrency = document.querySelector('input[name="valorMoeda"]');	
+	tipoDeTransacao = document.querySelector('select[name="compra&venda"]');
+	nomeDaMercadoria = document.querySelector('input[name="nomeMercadoria"]');
+	valorDaMoeda = document.querySelector('input[name="valorMoeda"]');	
 
-	if(!transactionName.value){
-		transactionName.focus();
+	if(!nomeDaMercadoria.value){
+		nomeDaMercadoria.focus();
 		return;
 	}
 
-	console.log(!transactionCurrency.value && transactionCurrency.value.replace(/[^0-9]/g, "") == "")
-
-	if(transactionCurrency.value.replace(/[^0-9]/g, "") == ""){
-		transactionCurrency.focus();
+	if(valorDaMoeda.value.replace(/[^0-9]/g, "") == ""){
+		valorDaMoeda.focus();
 		return;
 	}
 
-	currencyNumber = parseInt(transactionCurrency.value.replace(/[^0-9]/g, ""));
+	numeroDaMoeda = parseInt(valorDaMoeda.value.replace(/[^0-9]/g, ""));
 
-	transactions.push({
-		transType: transactionType.value,
-		transName: transactionName.value,
-		transCurrency: currencyNumber  
+	transacoes.push({
+		tipoTrans: tipoDeTransacao.value,
+		nomeMerc: nomeDaMercadoria.value,
+		tipoMoeda: numeroDaMoeda  
 	})
 
-	transactionName.value = "";
-	transactionCurrency.value = "";
+	nomeDaMercadoria.value = "";
+	valorDaMoeda.value = "";
 
-	localStorage.setItem("transactions", JSON.stringify(transactions));
+	localStorage.setItem("transacoes", JSON.stringify(transacoes));
 
-	AddingTransactions();
+	addingTransactions();
 }
 
-AddingTransactions();
+addingTransactions();
 
 // Final do formulário Nova Transação. ------------------------------------------
