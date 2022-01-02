@@ -1,8 +1,4 @@
-const writingFormatter = new Intl.NumberFormat('pt-BR', {
-	style: 'currency',
-	currency: 'BRL',
-	minimumFractionDigits: 2,
-});
+const writingFormatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2,});
 
 var transacoes = localStorage.getItem("transacoes") ? JSON.parse(localStorage.getItem("transacoes")) : [];
 
@@ -58,15 +54,14 @@ function addingTransactions(){
 
 	let total = 0;
 
-    if(transacoes.length == 0){
-		document.querySelector("#tabela-foot").innerHTML = 
-		`<tr class="tr-remove">
-	            <td class="tabela-total-vazio"></td>
-	            <td class="tabela-total"><p style="text-align:center;">Não há transações adicionadas.</p></td>
-	            <td class="tabela-valorTotal"></td>
-	        </tr>`
-	}
-
+	    if(transacoes.length == 0){
+			document.querySelector("#tabela-foot").innerHTML = 
+			`<tr class="tr-remove">
+		            <td class="tabela-total-vazio"></td>
+		            <td class="tabela-total"><p style="text-align:center;">Não há transações adicionadas.</p></td>
+		            <td class="tabela-valorTotal"></td>
+		        </tr>`
+		}
 
 	for(item in transacoes){
 
