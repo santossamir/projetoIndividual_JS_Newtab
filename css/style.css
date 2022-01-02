@@ -118,7 +118,7 @@ hr{
 	border-radius: 4px;
 	color: #888888;
 	padding-left: 10px;
-	outline: 0;
+	outline: 1;
 }
 
 .formulario-label-mercadoria {
@@ -138,7 +138,7 @@ hr{
     box-sizing: border-box;
     border-radius: 4px;
     padding-left: 12px;
-    outline: 0;
+    outline: 1;
 }
 
 .formulario-label-valor {
@@ -157,7 +157,7 @@ hr{
 	box-sizing: border-box;
 	border-radius: 4px;
 	padding-left: 12px;
-	outline: 0;
+	outline: 1;
 }
 
 .formulario-input-botao {
