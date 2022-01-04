@@ -31,11 +31,11 @@
                 <!--Início do menu hamburguer para responsividade-->
                  <div class="topo-menu-hamburguer">
                     <span class="button-menu">
-                        <img src="img/mobile-menu.svg" onclick="document.querySelector('.conteudo-menu-hamburguer').style.right = 0; ">
+                        <img src="img/mobile-menu.svg" onclick="Open()">
                     </span>
                     <div class="conteudo-menu-hamburguer">
                         <div class="close">
-                            <img src="img/mais.png" onclick="document.querySelector('.conteudo-menu-hamburguer').style.right = '-338px'; ">
+                            <img src="img/mais.png" onclick="Close()">
                         </div>
                         <ul>
                             <li><a href="#" onclick="toClean()">Limpar Dados</a></li>
@@ -58,7 +58,7 @@
                     
                         <div class="div-form-select">   
                             <div class="formulario-label-transacoes">Tipo de transação</div>
-                                <select class="formulario-select" name="compra&venda">
+                                <select class="formulario-select" name="compra-venda">
                                     <option value="compra">Compra</option>
                                     <option value="venda">Venda</option>
                                 </select>

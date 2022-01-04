@@ -1,6 +1,23 @@
 const writingFormatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2,});
 
 var transacoes = localStorage.getItem("transacoes") ? JSON.parse(localStorage.getItem("transacoes")) : [];
+let writingPattern = /[^0-9]/;
+
+//Início das funções Open e Close. ---------------------------------------
+
+function Open(){
+	 document.querySelector('.conteudo-menu-hamburguer').style.right = 0;
+}
+
+function Close() {
+	document.querySelector('.conteudo-menu-hamburguer').style.right = '-338px'; 
+}
+
+//Final das funções Open e Close. ---------------------------------------
+
+/*function openClose(){
+	 	document.querySelector('.conteudo-menu-hamburguer').style.right = '-338px';
+	 }*/
 
 //Início da função toClean - Limpar Dados. ---------------------------
 function toClean(){
@@ -21,7 +38,6 @@ function focusOnForm(){
 // Final da função focar no formulário - Cadastro de Transações.------------------------
 
 // Início da escrita padrão do valor moeda. --------------------------------
-let writingPattern = /[^0-9]/;
 
 function currencyFormat(moeda){
 	if(writingPattern.test(moeda.key)){
@@ -95,7 +111,7 @@ function addingTransactions(){
 function submitingForm(e){
 	e.preventDefault();
 
-	tipoDeTransacao = document.querySelector('select[name="compra&venda"]');
+	tipoDeTransacao = document.querySelector('select[name="compra-venda"]');
 	nomeDaMercadoria = document.querySelector('input[name="nomeMercadoria"]');
 	valorDaMoeda = document.querySelector('input[name="valorMoeda"]');	
 
