@@ -15,10 +15,6 @@ function Close() {
 
 //Final das funções Open e Close. ---------------------------------------
 
-/*function openClose(){
-	 	document.querySelector('.conteudo-menu-hamburguer').style.right = '-338px';
-	 }*/
-
 //Início da função toClean - Limpar Dados. ---------------------------
 function toClean(){
 	let removeConfirm = confirm("Deseja remover as transações?");

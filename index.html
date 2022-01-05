@@ -66,16 +66,16 @@
 
                         <div class="div-form-mercadoria">
                             <div class="formulario-label-mercadoria">Nome da mercadoria</div>
-                            <input class="formulario-input-text" name="nomeMercadoria"  type="text" placeholder="Mercadoria">
+                            <input class="formulario-input-text" name="nomeMercadoria" type="text" required  placeholder="Mercadoria">
                         </div>
 
                          <div class="div-form-valor">
                             <div class="formulario-label-valor">Valor</div>
-                            <input class="formulario-input-number" name="valorMoeda" type="text" placeholder="R$ 0,00" onkeypress="currencyFormat(event)">
+                            <input class="formulario-input-number" name="valorMoeda" type="text" required placeholder="R$ 0,00" onkeypress="currencyFormat(event)">
                         </div>
                     </div>    
 
-                    <input class="formulario-input-botao" type="button" value="Adicionar transação" onclick="submitingForm(event)">
+                    <input class="formulario-input-botao" type="button" value="Adicionar transação" onclick="submitingForm(event);">
 
                 </form> <!--Final do formulário Nova Transação.-->
 
