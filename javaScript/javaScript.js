@@ -3,17 +3,13 @@ const writingFormatter = new Intl.NumberFormat('pt-BR', { style: 'currency', cur
 var transacoes = localStorage.getItem("transacoes") ? JSON.parse(localStorage.getItem("transacoes")) : [];
 let writingPattern = /[^0-9]/;
 
-//Início das funções Open e Close. ---------------------------------------
+//Início da função ToggleMenu. ---------------------------------------
 
-function Open(){
-	 document.querySelector('.conteudo-menu-hamburguer').style.right = 0;
+function ToggleMenu(pixels) {
+	document.querySelector('.conteudo-menu-hamburguer').style.right = pixels + 'px'; 
 }
 
-function Close() {
-	document.querySelector('.conteudo-menu-hamburguer').style.right = '-338px'; 
-}
-
-//Final das funções Open e Close. ---------------------------------------
+//Final da função ToggleMenu. ---------------------------------------
 
 //Início da função toClean - Limpar Dados. ---------------------------
 function toClean(){
